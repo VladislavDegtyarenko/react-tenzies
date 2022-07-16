@@ -14,8 +14,8 @@ export default function App() {
       rolls: 0,
    });
    const [bestScore, setBestScore] = React.useState({
-      rolls: localStorage.getItem("bestRollsScore") || null,
-      time: localStorage.getItem("bestTimeScore") || null,
+      rolls: JSON.parse(localStorage.getItem("bestRollsScore")) || null,
+      time: JSON.parse(localStorage.getItem("bestTimeScore")) || null,
       rollsRecordAlert: false,
       timeRecordAlert: false,
    });
@@ -149,7 +149,7 @@ export default function App() {
       });
    };
 
-   const handleKeyDown = e => console.log(e);
+   const handleKeyDown = (e) => console.log(e);
 
    return (
       <main>
